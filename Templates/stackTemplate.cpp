@@ -92,7 +92,7 @@ template < typename T >
     std::size_t size() const {
       return data_.size();
     }
-
+    
     /**
      * @brief Ejecuta una función sobre cada elemento de la pila.
      *
@@ -105,7 +105,7 @@ template < typename T >
 
 /**
 
-@brief Función principal del programa que crea una instancia de Stack<int>,
+@brief Función principal del programa que crea una instancia de Stack<int> y Stack<float>
 empuja tres valores y los imprime usando el método foreach. Luego, le hace pop a los valores
 y los imprime en la consola, y maneja cualquier excepción que pueda surgir si se desapila de una pila vacía.
 @return 0.
@@ -130,6 +130,27 @@ int main() {
   } catch (const std::exception & e) {
     std::cerr << "Exception: " << e.what() << std::endl; ///Si la pila está vacía dispara la exepción
   }
+
+  Stack < float > f; /// Instancia para usar el template con tipo de dato float
+  f.push(20.4); ///se insertan estos números a la pila
+  f.push(100.5);
+  f.push(3.14);
+  std::cout << "Stack size: " << f.size() << std::endl; /// da el tamaño de la pila
+  f.foreach([](float & value) { ///Función que itera sobre cada elemento del vector
+    std::cout << "Value: " << value << std::endl; //Imprime los valores insertados en la pila
+  });
+
+  try {
+    while (!f.empty()) { ///Mientras la pila no este vacía entra al while
+       float value = f.pop(); /// Saca cada elemento de la pila
+      std::cout << "Popped value: " << value << std::endl;
+    }
+    // f.pop(); // Sentencia que dispara la exepción out of range
+    std::cout << "Stack size: " << f.size() << std::endl;
+  } catch (const std::exception & e) {
+    std::cerr << "Exception: " << e.what() << std::endl; ///Si la pila está vacía dispara la exepción
+  }
+
 
   return 0;
 }
