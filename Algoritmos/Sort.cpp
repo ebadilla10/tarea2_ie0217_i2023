@@ -1,5 +1,32 @@
+/**
+Licencia MIT
+
+Copyright (c) [2023] Tarea 2 - Grupo 2 - IE 0217 - I Ciclo 2023
+
+Se concede aquí, sin cargo, a cualquier persona que obtenga una copia de este
+software y los archivos de documentación asociados (el "Software"), para
+utilizar el Software sin restricciones, incluyendo, sin limitación, los
+derechos para usar, copiar, modificar, fusionar, publicar, distribuir,
+sublicenciar y/o vender copias del Software, y para permitir a las personas a
+quienes se les proporcione el Software que lo hagan, sujeto a las siguientes
+condiciones:
+
+El aviso de copyright anterior y este aviso de permiso se incluirán en todas
+las copias o partes sustanciales del Software.
+
+EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O
+IMPLÍCITA, INCLUYENDO PERO NO LIMITADO A GARANTÍAS DE COMERCIALIZACIÓN,
+IDONEIDAD PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO LOS
+AUTORES O TITULARES DEL COPYRIGHT SERÁN RESPONSABLES POR NINGUNA RECLAMACIÓN,
+DAÑO O OTRA RESPONSABILIDAD, YA SEA EN UNA ACCIÓN CONTRACTUAL, AGRAVIO O DE
+OTRO MODO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U
+OTROS ACUERDOS EN EL SOFTWARE.
+*/
+
 #include <set>
+
 #include<iostream>
+
 #include "headerSort.hpp"
 
 using namespace std;
@@ -20,17 +47,17 @@ bubbleSort(arr, n);
 */
 
 #define SIZE_ARRAY 10
-void bubbleSort(int arr[], int n){
-    int temp = 0;
-    for(int i = 0; i < n - 1; i++) {
-        for(int j = 0; j < n -i - 1; j++) {
-            if (arr[j] > arr[j+1]){
-                temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
+void bubbleSort(int arr[], int n) {
+  int temp = 0;
+  for (int i = 0; i < n - 1; i++) {
+    for (int j = 0; j < n - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
     }
+  }
 }
 
 /**
@@ -48,21 +75,20 @@ selectionSort(arr, n);
 @endcode
 */
 
-
-void selectionSort(int arr[], int n){
-    int smallest = 0;
-    int temp = 0;
-    for(int i = 0; i < n - 1; i++) {
-        smallest = i;
-        for(int j = i + 1; j < n; j++) {
-            if (arr[j] < arr[smallest]){
-                smallest = j;
-            }
-        }
-            temp = arr[i];
-            arr[i] = arr[smallest];
-            arr[smallest] = temp;
+void selectionSort(int arr[], int n) {
+  int smallest = 0;
+  int temp = 0;
+  for (int i = 0; i < n - 1; i++) {
+    smallest = i;
+    for (int j = i + 1; j < n; j++) {
+      if (arr[j] < arr[smallest]) {
+        smallest = j;
+      }
     }
+    temp = arr[i];
+    arr[i] = arr[smallest];
+    arr[smallest] = temp;
+  }
 }
 
 /**
@@ -82,20 +108,19 @@ insertionSort(arr, n);
 @endcode
 */
 
-void insertionSort(int arr[], int n){
-    int actual = 0;
-    int var_comp;
-    for(int i = 1; i < n; i++){
-        actual = arr[i]; 
-        var_comp = i - 1; 
-        while((var_comp >= 0) && ( actual < arr[var_comp])){
-            arr[var_comp+1] = arr[var_comp];
-            var_comp--;
-        }
-        arr[var_comp +1] = actual;
+void insertionSort(int arr[], int n) {
+  int actual = 0;
+  int var_comp;
+  for (int i = 1; i < n; i++) {
+    actual = arr[i];
+    var_comp = i - 1;
+    while ((var_comp >= 0) && (actual < arr[var_comp])) {
+      arr[var_comp + 1] = arr[var_comp];
+      var_comp--;
     }
+    arr[var_comp + 1] = actual;
+  }
 }
-
 
 /**
 @brief Ordena un arreglo usando el algoritmo de Quick sort.
@@ -115,31 +140,28 @@ quickSort(arr, n);
 */
 
 void quickSort(int arr[], int low, int high) {
-    if (low < high) {
-        int pivot = arr[high];
-        int i = low - 1;
-        
-        for (int j = low; j <= high - 1; j++) {
-            if (arr[j] < pivot) {
-                i++;
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
-        int temp = arr[i + 1];
-        arr[i + 1] = arr[high];
-        arr[high] = temp;
+  if (low < high) {
+    int pivot = arr[high];
+    int i = low - 1;
 
-        int pi = i + 1;
-
-        quickSort(arr, low, pi - 1);
-        quickSort(arr, pi + 1, high);
+    for (int j = low; j <= high - 1; j++) {
+      if (arr[j] < pivot) {
+        i++;
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+      }
     }
+    int temp = arr[i + 1];
+    arr[i + 1] = arr[high];
+    arr[high] = temp;
+
+    int pi = i + 1;
+
+    quickSort(arr, low, pi - 1);
+    quickSort(arr, pi + 1, high);
+  }
 }
-
-
-
 
 /**
 
@@ -148,42 +170,42 @@ void quickSort(int arr[], int low, int high) {
 @return 0 si todo sale bien
 */
 int main() {
-    int array[SIZE_ARRAY] = {}; /// Arreglo a ordenar
-    for (int i = 0; i < SIZE_ARRAY; i++) {
-        array[i] =rand() % 10000; /// Limita la cantidad de números aleatorios
-    }
-    cout << " arreglo desordenado : " << endl;
-    for (int i = 0; i <  SIZE_ARRAY; i++){
-        cout << array[i] << " "; /// Muestra el arreglo desordenado
-    }  
-    
-    bubbleSort(array, SIZE_ARRAY); /// Ordena el arreglo usando bubble sort
-    cout << endl;
-    cout << " arreglo ordenado con Bubble Sort: " << endl; ///Imprime el arreglo ordenado
-    for (int i = 0; i <  SIZE_ARRAY; i++){
-        cout << array[i] << " ";
-    }
+  int array[SIZE_ARRAY] = {}; /// Arreglo a ordenar
+  for (int i = 0; i < SIZE_ARRAY; i++) {
+    array[i] = rand() % 10000; /// Limita la cantidad de números aleatorios
+  }
+  cout << " arreglo desordenado : " << endl;
+  for (int i = 0; i < SIZE_ARRAY; i++) {
+    cout << array[i] << " "; /// Muestra el arreglo desordenado
+  }
 
-    selectionSort(array, SIZE_ARRAY); /// Ordena el arreglo usando selectionSort
-    cout << endl;
-    cout << " arreglo ordenado con Selection Sort: " << endl; ///Imprime el arreglo ordenado
-    for (int i = 0; i <  SIZE_ARRAY; i++){
-        cout << array[i] << " ";
-    }
+  bubbleSort(array, SIZE_ARRAY); /// Ordena el arreglo usando bubble sort
+  cout << endl;
+  cout << " arreglo ordenado con Bubble Sort: " << endl; ///Imprime el arreglo ordenado
+  for (int i = 0; i < SIZE_ARRAY; i++) {
+    cout << array[i] << " ";
+  }
 
-    insertionSort(array, SIZE_ARRAY); /// Ordena el arreglo usando selectionSort
-    cout << endl;
-    cout << " arreglo ordenado con Insertion Sort: " << endl; ///Imprime el arreglo ordenado
-    for (int i = 0; i <  SIZE_ARRAY; i++){
-        cout << array[i] << " ";
-    }
+  selectionSort(array, SIZE_ARRAY); /// Ordena el arreglo usando selectionSort
+  cout << endl;
+  cout << " arreglo ordenado con Selection Sort: " << endl; ///Imprime el arreglo ordenado
+  for (int i = 0; i < SIZE_ARRAY; i++) {
+    cout << array[i] << " ";
+  }
 
-    quickSort(array, 0, SIZE_ARRAY - 1);
-    cout << "\n" << "Arreglo ordenado con Quick sort: ";
-    cout << "\n";
-    for (int i = 0; i < SIZE_ARRAY; i++) {
-        cout << array[i] << " ";
-    }
-    cout << endl;
-    return 0;
+  insertionSort(array, SIZE_ARRAY); /// Ordena el arreglo usando selectionSort
+  cout << endl;
+  cout << " arreglo ordenado con Insertion Sort: " << endl; ///Imprime el arreglo ordenado
+  for (int i = 0; i < SIZE_ARRAY; i++) {
+    cout << array[i] << " ";
+  }
+
+  quickSort(array, 0, SIZE_ARRAY - 1);
+  cout << "\n" << "Arreglo ordenado con Quick sort: ";
+  cout << "\n";
+  for (int i = 0; i < SIZE_ARRAY; i++) {
+    cout << array[i] << " ";
+  }
+  cout << endl;
+  return 0;
 }
