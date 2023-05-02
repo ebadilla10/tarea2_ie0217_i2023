@@ -12,7 +12,7 @@ La idea principal detrás de Bubble Sort es comparar cada par de elementos adyac
 y si están en orden incorrecto, intercambiarlos. Esto se repite hasta que toda la lista esté ordenada. 
 En el peor de los casos, cuando la lista está completamente desordenada, el algoritmo debe realizar n(n-1)/2 comparaciones y n(n-1)/2 intercambios, lo que da como resultado una complejidad de O(n^2).
 
-Selection Sort: Este algoritmo es similar a Bubble Sort en términos de complejidad.
+2. Selection Sort: Este algoritmo es similar a Bubble Sort en términos de complejidad.
 La idea principal detrás de Selection Sort es encontrar el elemento mínimo en la lista y colocarlo 
 en la posición adecuada. Este proceso se repite para cada elemento de la lista hasta que toda la lista 
 esté ordenada. En el peor de los casos, el algoritmo debe realizar n(n-1)/2 comparaciones y n intercambios,
