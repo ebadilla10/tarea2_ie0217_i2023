@@ -24,14 +24,41 @@ OTROS ACUERDOS EN EL SOFTWARE.
 */
 
 #ifndef HEADER_SORT_HPP
-#def HEADER_SORT_HPP
+#define HEADER_SORT_HPP
 
+/**
+ * @brief Ordena un arreglo utilizando el algoritmo de Bubble Sort.
+ * 
+ * @param arr Arreglo a ordenar.
+ * @param n Tamaño del arreglo.
+ */
 void bubbleSort(int arr[], int n);
 
+/**
+ * @brief Ordena un arreglo utilizando el algoritmo de Selection Sort.
+ * 
+ * @param arr Arreglo a ordenar.
+ * @param n Tamaño del arreglo.
+ */
 void selectionSort(int arr[], int n);
 
+/**
+ * @brief Ordena un arreglo utilizando el algoritmo de Insertion Sort.
+ * 
+ * @param arr Arreglo a ordenar.
+ * @param n Tamaño del arreglo.
+ */
 void insertionSort(int arr[], int n);
 
+/**
+ * @brief Ordena un arreglo utilizando el algoritmo de Quick Sort.
+ * 
+ * @param arr Arreglo a ordenar.
+ * @param low Índice más bajo del arreglo a ordenar.
+ * @param high Índice más alto del arreglo a ordenar.
+ */
 void quickSort(int arr[], int low, int high);
 
+
 #endif /* HEADER_SORT_HPP */
+
