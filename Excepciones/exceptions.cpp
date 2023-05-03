@@ -23,22 +23,33 @@ OTRO MODO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U
 OTROS ACUERDOS EN EL SOFTWARE.
 */
 
+/**
+
+@file MyException.hpp
+@brief Declaración de la clase MyException
+Este archivo contiene la declaración de la clase MyException, la cual es una clase
+derivada de std::exception. Esta clase define una excepción personalizada y solo
+implementa el método what().
+*/
+/**
+
+@class MyException
+@brief Clase que define una excepción personalizada
+La clase MyException define una excepción personalizada derivada de std::exception.
+Solo se implementa el método what() para retornar un mensaje de error personalizado.
+*/
+/**
+
+@brief Retorna un mensaje de error personalizado
+Este método retorna un mensaje de error personalizado de tipo const char*.
+@return const char* Mensaje de error personalizado.
+@throw Esta función no lanza excepciones.
+*/
 #include <iostream>
+#include "MyException.hpp"
 
-class MyException : public std::exception {
-public:
-  const char* what() const throw() {
-    return "My custom exception";
-  }
-};
-
-int main() {
-
-  try {
-    throw MyException();
-  } catch (std::exception& e) {
-    std::cout << "Error: " << e.what() << std::endl;
-  }
-
-  return 0;
+const char* MyException::what() const throw(){
+return "My custom exception";
 }
+
+
