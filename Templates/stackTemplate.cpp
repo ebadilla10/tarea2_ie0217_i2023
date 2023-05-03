@@ -27,65 +27,139 @@ OTROS ACUERDOS EN EL SOFTWARE.
 #include <vector>
 #include <algorithm>
 #include <stdexcept>
-#include <functional>
+// #include <functional>  No es necesaria
 
+
+
+/**
+ * @brief Plantilla de clase pila
+ * 
+ * @tparam T Tipo de dato a almacenar en la pila
+ */
 template<typename T>
-class Stack {
-private:
-  std::vector<T> data_;
-
+class Pila
+{
 public:
-  void push(T value) {
-    data_.push_back(value);
-  }
-
-  T pop() {
-    if (data_.empty()) {
-      throw std::out_of_range("Stack is empty");
+    /**
+     * @brief Construct a new Pila object
+     * 
+     */
+    Pila()
+    {
+        maximo = 10;
+        elementos = new T[maximo];
+        tope = -1;
     }
-    T value = data_.back();
-    data_.pop_back();
-    return value;
-  }
 
-  void clear() {
-    data_.clear();
-  }
+    /**
+     * @brief Destroy the Pila object
+     * 
+     */
+    ~Pila()
+    {
+        delete[] elementos;
+    }
 
-  bool empty() const {
-    return data_.empty();
-  }
+    /**
+     * @brief Agrega un elemento a la pila
+     * 
+     * @param elemento Elemento a agregar
+     */
+    void push(T elemento)
+    {
+        if (tope == maximo - 1) {
+            throw std::out_of_range("Pila llena");
+        }
 
-  std::size_t size() const {
-    return data_.size();
-  }
+        elementos[++tope] = elemento;
+    }
 
-  void foreach(const std::function<void(T&)>& func) {
-    std::for_each(data_.begin(), data_.end(), func);
-  }
+    /**
+     * @brief Elimina el elemento en el tope de la pila
+     * 
+     */
+    void pop()
+    {
+        if (tope == -1) {
+            throw std::out_of_range("Pila vacia");
+        }
+
+        --tope;
+    }
+
+    /**
+     * @brief Obtiene el elemento en el tope de la pila
+     * 
+     * @return T Elemento en el tope de la pila
+     */
+    T top()
+    {
+        if (tope == -1) {
+            throw std::out_of_range("Pila vacia");
+        }
+
+        return elementos[tope];
+    }
+
+private:
+    T* elementos;
+    int maximo;
+    int tope;
 };
 
-int main() {
-  Stack<int> s;
-  s.push(2021);
-  s.push(2054);
-  s.push(6524);
+/**
+ * @brief Función principal del programa
+ * 
+ * @return int 
+ */
+int main()
+{
+    // Creamos una instancia de Pila<int>
+    Pila<int> miPila;
 
-  std::cout << "Stack size: " << s.size() << std::endl;
+    // Agregamos algunos elementos a la pila
+    miPila.push(1);
+    miPila.push(2);
+    miPila.push(3);
 
-  s.foreach([](int& value) {
-    std::cout << "Value: " << value << std::endl;
-  });
+    // Eliminamos un elemento de la pila
+    miPila.pop();
 
-  try {
-    while (!s.empty()) {
-      int value = s.pop();
-      std::cout << "Popped value: " << value << std::endl;
-    }
-    std::cout << "Stack size: " << s.size() << std::endl;
-  } catch (const std::exception& e) {
-    std::cerr << "Exception: " << e.what() << std::endl;
-  }
+    // Obtenemos el elemento en el tope de la pila y lo mostramos
+    std::cout << "El elemento en el tope de la pila es: " << miPila.top() << std::endl;
 
-  return 0;
+    // Creamos una instancia de Pila<std::string>
+    Pila<std::string> miPilaDeStrings;
+
+    // Agregamos algunos elementos a la pila de strings
+    miPilaDeStrings.push("Hola");
+    miPilaDeStrings.push("Mundo");
+
+    // Eliminamos un elemento de la pila de strings
+    miPilaDeStrings.pop();
+
+    // Obtenemos el elemento en el tope de la pila de strings y lo mostramos
+    std::cout << "El elemento en el tope de la pila de strings es: " << miPilaDeStrings.top() << std::endl;
+
+    // Agregamos un elemento más de los permitidos a la pila de strings para que se lance la excepción out_of_range
+    // miPilaDeStrings.push("Excediendo el límite de la pila");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

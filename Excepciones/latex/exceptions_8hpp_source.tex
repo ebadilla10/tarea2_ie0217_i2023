@@ -1,0 +1,19 @@
+\hypertarget{exceptions_8hpp_source}{}\doxysection{exceptions.\+hpp}
+\mbox{\hyperlink{exceptions_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef EXCEPTIONS\_HPP}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define EXCEPTIONS\_HPP}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <exception>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_my_exception}{MyException}} : \textcolor{keyword}{public} std::exception \{}
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_my_exception_a2b3349cb98dbce0294df0e28f344877c}{what}}() \textcolor{keyword}{const} throw() \{}
+\DoxyCodeLine{32     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}My custom exception"{}};}
+\DoxyCodeLine{33   \}}
+\DoxyCodeLine{34 \};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// EXCEPTIONS\_HPP}}
+
+\end{DoxyCode}

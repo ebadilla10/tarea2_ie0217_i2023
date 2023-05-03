@@ -1,0 +1,2 @@
+Para compilar el programa, posicionarse en la carpeta llamada "Excepciones" y utilizar el comando "make". El ejecutable resultante se va a llamar Diosito3, proceda a ejecutar con la linea "./Diosito3". Luego de ejcutar borre los ejecutables con el comando "make clean" para mayor orden y buen manejo de la memoria. 
+Los archivos de documentación se formaron tanto en html como en latex, en las carpetas que llevan ese mismo nombre. 
