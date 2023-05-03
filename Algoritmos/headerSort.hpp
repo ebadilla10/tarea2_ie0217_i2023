@@ -26,12 +26,61 @@ OTROS ACUERDOS EN EL SOFTWARE.
 #ifndef HEADER_SORT_HPP
 #def HEADER_SORT_HPP
 
+/**
+ * @brief Metodo de ordenamiento de numeros enteros.
+ * 
+ * El algoritmo recorre el arreglo arr, compara los elementos
+ * adyacentes y los intercambia en caso de que esten en el orden incorrecto.
+ * 
+ * @param arr Arreglo que contiene los numeros enteros. Puntero al primer
+ * elemento del arreglo.
+ * 
+ * @param n Numero de elementos en el arreglo.
+ */
 void bubbleSort(int arr[], int n);
 
+/**
+ * @brief Metodo de ordenamiento de numeros enteros.
+ * 
+ * El algortimo encuentra el elemento minimo de la parte no ordenada
+ * del arreglo y lo coloca en el inicio de la parte ordenada del arreglo.
+ * 
+ * @param arr Arreglo que contiene los numeros enteros. Puntero al primer
+ * elemento del arreglo.
+ * 
+ * @param n Numero de elementos en el arreglo.
+ */
 void selectionSort(int arr[], int n);
 
+/**
+ * @brief Metodo de ordenamiento de numeros enteros.
+ * 
+ * El algoritmo itera sobre un arreglo y para cada elemento, encuentra su
+ * posicion correcrta en la parte ordenada del arreglo y lo inserta en dicha
+ * posicion.
+ * 
+ * @param arr Arreglo que contiene los numeros enteros. Puntero al primer
+ * elemento del arreglo.
+ * 
+ * @param n Numero de elementos en el arreglo.
+ */
 void insertionSort(int arr[], int n);
 
+/**
+ * @brief Metodo de ordenamiento de numeros enteros.
+ * 
+ * En el algoritmo se selecciona un pivote y se divide el arreglo alrededor
+ * de este pivote, de manera que todos los elementos menores al pivote se
+ * colocan en la izquierda y los elementos más grandes se colocan a la derecha.
+ * Se utiliza recursivamente para elegir un nuevo pivote y sub arreglos.
+ * 
+ * @param arr Arreglo que contiene los numeros enteros. Puntero al primer
+ * elemento del arreglo.
+ *  
+ * @param low Indice del primer elemento del sub arreglo.
+ * 
+ * @param high Indice del ultimo elemento del sub arreglo.
+ */
 void quickSort(int arr[], int low, int high);
 
 #endif /* HEADER_SORT_HPP */
