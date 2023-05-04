@@ -25,20 +25,26 @@ OTROS ACUERDOS EN EL SOFTWARE.
 
 #include <iostream>
 
+// Este código implementa la creación de la clase MyException. La clase MyException hereda los métodos y miembros de la clase 'std::exception'. 
 class MyException : public std::exception {
-public:
-  const char* what() const throw() {
-    return "My custom exception";
+public: // Posee permisos públicos
+  // Se sobreescribe el método what() y se devuelve un puntero a una cadena de caracteres (const char*) que describe la excepción
+  const char* what() const throw() { 
+    return "My custom exception"; 
   }
 };
 
+// Creación de la función prinicipal del prorgrama 
 int main() {
 
+  // Se llama al bloque try-catch para el debido manejo de excepciones. 
   try {
     throw MyException();
-  } catch (std::exception& e) {
-    std::cout << "Error: " << e.what() << std::endl;
+    // La exepción es capturada en el bloque 'catch(std::exception& e)'
+  } catch (std::exception& e) { // Captura cualquier excepción de tipo std::exception o cualquier subclase de std::exception
+    std::cout << "Error: " << e.what() << std::endl; // Al ejecutarse el programa, se lanza la excepción MyException y se muestra el mensaje "Error: My custom exception" 
   }
 
+  // Finaliza el programa
   return 0;
 }
