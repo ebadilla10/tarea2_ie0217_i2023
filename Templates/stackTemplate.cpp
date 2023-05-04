@@ -23,22 +23,45 @@ OTRO MODO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U
 OTROS ACUERDOS EN EL SOFTWARE.
 */
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <stdexcept>
-#include <functional>
+/**
+ * @file stackTemplate.cpp
+ * @brief Ejemplo de uso templates
+ * @date 30/04/2023
+ * @author ebadilla
+*/
 
+#include <iostream>  
+#include <vector>  
+#include <algorithm>  
+
+#include <functional>  // Se incluyen las bibliotecas necesarias
+
+/**
+ * @brief Clase Stack que representa una pila de elementos del tipo T.
+ *
+ * Esta clase se implementa utilizando un vector para almacenar los elementos
+ * de la pila.
+ */
 template<typename T>
 class Stack {
 private:
-  std::vector<T> data_;
+  std::vector<T> data_;  // Vector que almacena los elementos de la pila.
 
 public:
+  /**
+   * @brief Agrega un elemento a la pila.
+   * @param value Valor del elemento a agregar.
+   */
   void push(T value) {
     data_.push_back(value);
   }
 
+  /**
+   * @brief Saca un elemento de la pila.
+   * @return Valor del elemento sacado.
+   *
+   * Si la pila está vacía, lanza una excepción std::out_of_range.
+   */
   T pop() {
     if (data_.empty()) {
       throw std::out_of_range("Stack is empty");
@@ -48,44 +71,75 @@ public:
     return value;
   }
 
+  /**
+   * @brief Vacia la pila.
+   */
   void clear() {
     data_.clear();
   }
 
+  /**
+   * @brief Comprueba si la pila esta vacia.
+   * @return True si la pila esta vacia, False en caso contrario.
+   */
   bool empty() const {
     return data_.empty();
   }
 
+  /**
+   * @brief Obtiene el tamano de la pila.
+   * @return Tamano de la pila.
+   */
   std::size_t size() const {
     return data_.size();
   }
 
+  /**
+   * @brief Itera sobre todos los elementos de la pila, aplicando una funcion a cada uno.
+   * @param func Funcion que se aplicara a cada elemento de la pila.
+   */
   void foreach(const std::function<void(T&)>& func) {
     std::for_each(data_.begin(), data_.end(), func);
   }
 };
 
+/**
+ * @brief Funcion principal del programa.
+ */
 int main() {
+  // Creamos una pila de enteros
   Stack<int> s;
+  //s.pop(); // Sentencia que dispararia "out_of_range"
   s.push(2021);
   s.push(2054);
   s.push(6524);
 
+  // Creamos una nueva instancia para almacenar objetos de tipo std::string
+  Stack<std::string> s2;
+  s2.push("Fabian");
+
   std::cout << "Stack size: " << s.size() << std::endl;
+  std::cout << "Stack size: " << s2.size() << std::endl;
 
   s.foreach([](int& value) {
     std::cout << "Value: " << value << std::endl;
   });
 
-  try {
-    while (!s.empty()) {
-      int value = s.pop();
-      std::cout << "Popped value: " << value << std::endl;
+  s2.foreach([](std::string& value) {
+    std::cout << "Value: " << value << std::endl;
+  });
+
+  try {  // Intentamos sacar todos los elementos
+    while (!s2.empty()) {
+      std::string value = s2.pop();
+      std::cout << "Popped value: " << value << std::endl;  // Mostramos el elemento sacado
     }
-    std::cout << "Stack size: " << s.size() << std::endl;
-  } catch (const std::exception& e) {
-    std::cerr << "Exception: " << e.what() << std::endl;
+    std::cout << "Stack size: " << s2.size() << std::endl;  // Mostramos el tamaño de la pila
+  } catch (const std::exception& e) {  // Se muestra la excepcion
+    std::cerr << "Exception: " << e.what() << std::endl; // imprime el mensaje
   }
 
   return 0;
 }
+
+

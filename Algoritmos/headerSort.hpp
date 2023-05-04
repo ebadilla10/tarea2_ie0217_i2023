@@ -23,15 +23,48 @@ OTRO MODO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U
 OTROS ACUERDOS EN EL SOFTWARE.
 */
 
-#ifndef HEADER_SORT_HPP
-#def HEADER_SORT_HPP
+/**
+ * @file headerSort.hpp
+ * @date 29/04/2023
+ * @author ebadilla
+*/
 
+
+#ifndef HEADER_SORT_HPP
+#define HEADER_SORT_HPP
+
+/**
+ * @brief Ordena un array utilizando el algoritmo Bubble Sort.
+ * 
+ * @param arr Array a ordenar.
+ * @param n Tamaño del array.
+ */
 void bubbleSort(int arr[], int n);
 
+/**
+ * @brief Ordena un array utilizando el algoritmo Selection Sort.
+ *
+ * @param arr Array a ordenar.
+ * @param n Tamaño del array.
+ */
 void selectionSort(int arr[], int n);
 
+/**
+ * @brief Ordena un array utilizando el algoritmo Insertion Sort.
+ *
+ * @param arr Array a ordenar.
+ * @param n Tamaño del array.
+ */
 void insertionSort(int arr[], int n);
 
+/**
+ * @brief Ordena un array utilizando el algoritmo Quick Sort.
+ *
+ * @param arr Array a ordenar.
+ * @param low Índice más bajo del subarray a ordenar.
+ * @param high Índice más alto del subarray a ordenar.
+ */
 void quickSort(int arr[], int low, int high);
+
 
 #endif /* HEADER_SORT_HPP */
