@@ -23,17 +23,38 @@ OTRO MODO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U
 OTROS ACUERDOS EN EL SOFTWARE.
 */
 
+// Tarea 2 Elias Alvarado Vargas B80372
+// Parte Excepciones
+
+// En el siguiente codigo se presenta como crear una excepcion en C++,
+// y luego como poder usarla utilizando un bloque try, entonces la excepcion
+// es lanzada y capturada en el bloque que se tiene en el main.
+
+// Se incluye biblioteca iostream para tener acceso a los dispositivos estandar de entrada
+// y salida.
 #include <iostream>
 
+// En el siguiente bloque se presenta una clase denominada MyException, que hereda de la 
+// clase exception.
 class MyException : public std::exception {
+
+// Ahora a partir de la clase MyException, tiene un retorno de caracteres que menciona
+// My custom exception, donde lo que pasa es que ha lanzado un tipo de excepcion personalizada
+// what() la cual es publica 
 public:
   const char* what() const throw() {
     return "My custom exception";
   }
 };
 
+// Ahora en la funcion main se presenta en el siguiente bloque
 int main() {
 
+
+// Ahora se tiene la palabra clave throw que lanza una excepcion 
+// de la clase My Exception, y en el catch realiza la captura de 
+// cualquier excepcion capturada, en este caso es la palabra que
+// retorna por el metodo que se menciono antes what() de la clase MyException
   try {
     throw MyException();
   } catch (std::exception& e) {
