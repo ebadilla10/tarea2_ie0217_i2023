@@ -79,19 +79,27 @@ public:
   }
 };
 
-
+// En el siguiente codigo se tiene la funcion principial (main) del programa, 
+// en
 int main() {
   Stack<int> s;
+  // Ahora se ingresan tres valores diferentes a la pila (stack) usando la funcion push
   s.push(2021);
   s.push(2054);
   s.push(6524);
 
+  // Se imprime en la terminal el tamaño de  la pila utilizando la funcion size
   std::cout << "Stack size: " << s.size() << std::endl;
 
+  // En la siguientes lineas, se usa la funcion foreach para imprimir cada valor del stack
+  // en la terminal
   s.foreach([](int& value) {
     std::cout << "Value: " << value << std::endl;
   });
 
+  // Ahora mediante un while que representa un bucle, para poder desapilar(pop) todos los 
+  // valores de la pila y se imprimen en pantalla cada uno de los valores que se desapilaron, 
+  // ademas se imprime en pantalla el tamaño de la pila al finalizar el bucle
   try {
     while (!s.empty()) {
       int value = s.pop();
@@ -99,8 +107,65 @@ int main() {
     }
     std::cout << "Stack size: " << s.size() << std::endl;
   } catch (const std::exception& e) {
+    // Para cuando se tenga el caso que ocurra una excepcion al poder intentar desapilar un 
+    // valor de la pila vacia, se captura la excepcion y se imprime en pantalla un mesaje Error
     std::cerr << "Exception: " << e.what() << std::endl;
   }
 
+
+  // Ahora se agrega una nueva instancia donde utilice el template dato, pero para otro tipo de dato. 
+  // Agregar algunas lineas utilizando esta nueva instancia
+
+
+  // Con ayuda de una investigacion se logra desarollar el siguiente codigo, donde se tiene el uso de 
+  // una plantilla de clase stack que almacena elementos de tipo string, primero se crea una instancia stack 
+  // llamada p
+  Stack<std::string> p;
+  
+  // Ahora se agregan tres caracteres, Hola, Mundo y !, lo anterior al stack, que se proporciona como una 
+  // funcion  que toma una referencia a cada uno de los valores del stack e imprime usando std::cout
+  p.push("Hola");
+  p.push("Mundo");
+  p.push("!");
+
+  std::cout << "Tamaño que posee la pila: " << p.size() << std::endl;
+
+  // Despues se hace uso del metodo foreach para poder imprimir los valores del stack, que se proporciona
+  // como una funcion que toma una referencia a cada valor del stack y lo imprime usando std::cout
+  p.foreach([](std::string& value) {
+    std::cout << "El Valor: " << value << std::endl;
+  });
+
+  // Luego, el el siguiente bloque se utiliza un bucle while para poder extraer todos los valores del stack
+  // con el metodo pop y seguidamente se imprimen, entonces el bucle continua hasta que el stack se encuentre
+  // vacia, despues se imprime el tamaño de la pila.
+  try {
+    while (!p.empty()) {
+      std::string value = p.pop();
+      std::cout << "Valor del pop: " << value << std::endl;
+    }
+    std::cout << "Tamano de la pila: " << p.size() << std::endl;
+  } catch (const std::exception& e) {
+
+    // Ahora en caso de producirse alguna excepcion durante la ejecusion del programa, se captura y 
+    // luego se imprime el mensaje de error
+    std::cerr << "Excepcion: " << e.what() << std::endl;
+  }
+
+  // Para el caso donde se dispare la excepcion un out_of_range presente en el template se tiene el siguiente codigo
+  // Se deja comentado tal como se menciona en el enunciado
+  
+  // El codigo se crea un objeto myStack, cuando la pila esta vacia lo que hace es desencadenar la excepcion out_of_range
+  // entonces para manejar esta excepcion se usa una estructura try y catch para poder capturar la excepcion y luego imprimir 
+  // el mensaje de error
+
+  //Stack<int> myStack;
+  //try {
+   // myStack.pop(); // Tratando de eliminar un elemento de una pila vacía
+  //}
+  //catch (const std::out_of_range& e) {
+    //std::cerr << e.what() << std::endl; // Imprimir mensaje de error
+  //}
+  
   return 0;
 }
