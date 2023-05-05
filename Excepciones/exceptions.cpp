@@ -54,7 +54,7 @@ int main() {
 // Ahora se tiene la palabra clave throw que lanza una excepcion 
 // de la clase My Exception, y en el catch realiza la captura de 
 // cualquier excepcion capturada, en este caso es la palabra que
-// retorna por el metodo que se menciono antes what() de la clase MyException
+// retorna por el metodo que se menciono antes what() de la clase MyException.
   try {
     throw MyException();
   } catch (std::exception& e) {
