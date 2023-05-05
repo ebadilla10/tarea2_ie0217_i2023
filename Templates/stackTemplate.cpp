@@ -23,11 +23,14 @@ OTRO MODO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U
 OTROS ACUERDOS EN EL SOFTWARE.
 */
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <stdexcept>
-#include <functional>
+// Para saber si son necesarios los includes o no
+#include <iostream>   // Se utiliza para la entrada y salida estandar, si es necesario
+#include <vector>     // Para poder utilizar vectores, por lo tanto si es necesario
+#include <algorithm>  // Si es necesario porque se usa para la funcion for_each, o elementos de secuencia
+#include <stdexcept>  // Brinda en cierta forma clases, para poder controlar excepciones estandar, como por ejemplo out_fo_range
+#include <functional> // Se usa para definir y trabajar con objetos
+// Por lo tanto, todos los includes si son necesarios para compilar y ejecutar el codigo
+
 
 template<typename T>
 class Stack {
