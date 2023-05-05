@@ -31,17 +31,25 @@ OTROS ACUERDOS EN EL SOFTWARE.
 #include <functional> // Se usa para definir y trabajar con objetos
 // Por lo tanto, todos los includes si son necesarios para compilar y ejecutar el codigo
 
-
+// En el siguiente codigo se tiene un tipo de template de clase para un stack(pila) 
+// Se inicia con la declaracion del template de clase por medio del parametro del template
+// typename T y luego se tiene la clase stack
 template<typename T>
 class Stack {
+
+// Luego declara un vector vector de tipo T privado llamado data, para almacenar los 
+// elementos de stack
 private:
   std::vector<T> data_;
 
+// Ahora se declara una funcion, se le llama push, la cual toma el argumento del tipo T,
+// y que luego agrega el valor al final del vector data_ usando la funcion push_back
 public:
   void push(T value) {
     data_.push_back(value);
   }
-
+// Continuando, se declara la funcion pop, que elimina el elemento mas reciente del stack
+// y lo devuelve, en caso que el stack este vacio se pasa la excepcion out_of_range
   T pop() {
     if (data_.empty()) {
       throw std::out_of_range("Stack is empty");
@@ -50,23 +58,27 @@ public:
     data_.pop_back();
     return value;
   }
-
+// Se declara una funcion publica denominada clear, que borra todos los elementos del stack.
   void clear() {
     data_.clear();
   }
-
+// Ahora se declara la funcion empty que es publica que tiene como final retornar un tipo booleano
+// que indica si la pila esta vacia o no lo esta vacia o no lo esta
   bool empty() const {
     return data_.empty();
   }
-
+// En la siguiente funcion publica se declara la denominada size, el cual devuelve el tamaño del stack
   std::size_t size() const {
     return data_.size();
   }
 
+// Ahora se declara la funcion publica denominada foreach que toma un funcion de referencia de tipo void, 
+// donde se tiene como argumento y la aplica a cada elemento del stack utilizando la funcion for_each
   void foreach(const std::function<void(T&)>& func) {
     std::for_each(data_.begin(), data_.end(), func);
   }
 };
+
 
 int main() {
   Stack<int> s;
