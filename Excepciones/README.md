@@ -2,13 +2,13 @@
 
 ### Para ejecutar el programa escriba en la terminal las instrucciones:
 
-#### Para ejecutar el codigo del punto 1. del enunciado de Excepciones
+#### Para ejecutar el codigo del punto 1. del enunciado de Excepciones:
 ##### make excepcionesOriginal
 
-#### Para ejecutar el codigo del punto 2. del enunciado de Excepciones
+#### Para ejecutar el codigo del punto 2. del enunciado de Excepciones:
 ##### make excepcionesHeader
 
-#### Para ejecutar el codigo del punto 3. del enunciado de Excepciones
+#### Para ejecutar el codigo del punto 3. del enunciado de Excepciones:
 ##### make ejemploExcepciones
 
 
