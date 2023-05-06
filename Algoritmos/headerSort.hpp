@@ -23,15 +23,62 @@ OTRO MODO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U
 OTROS ACUERDOS EN EL SOFTWARE.
 */
 
-#ifndef HEADER_SORT_HPP
-#def HEADER_SORT_HPP
+// Tarea 2 Elias Alvarado Vargas B80372
 
+// En este codigo como se solicita en el enunciado, se documento siguiendo las 
+// pautas Doxygen, para cada una de las 4 funciones y asi como los argumentos que
+// estas reciben, de igual forma la explicacion como tal de cada funcion se presenta
+// de forma mas detallada en el archivo fuente main_algoritmo.cpp  
+
+/**
+
+@file header_sort.hpp
+@brief Contiene las declaraciones de las funciones de ordenamiento
+
+*/
+
+#ifndef HEADER_SORT_HPP
+#define HEADER_SORT_HPP
+
+/**
+
+@brief Ordena un arreglo utilizando el algoritmo Bubble Sort
+@param arr Arreglo a ordenar
+@param n Tamaño del arreglo
+
+*/
 void bubbleSort(int arr[], int n);
+
+
+/**
+
+@brief Ordena un arreglo utilizando el algoritmo Selection Sort
+@param arr Arreglo a ordenar
+@param n Tamaño del arreglo
+
+*/
 
 void selectionSort(int arr[], int n);
 
+
+/**
+
+@brief Ordena un arreglo utilizando el algoritmo Insertion Sort
+@param arr Arreglo a ordenar
+@param n Tamaño del arreglo
+
+*/
+
 void insertionSort(int arr[], int n);
+
+/**
+
+@brief Ordena un arreglo utilizando el algoritmo Quick Sort
+@param arr Arreglo a ordenar
+@param low Indice del primer elemento del arreglo
+@param high Indice del ultimo elemento del arreglo
+*/
 
 void quickSort(int arr[], int low, int high);
 
-#endif /* HEADER_SORT_HPP */
+#endif  
