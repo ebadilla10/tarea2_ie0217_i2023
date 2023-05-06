@@ -1,17 +1,18 @@
-CC=g++
-CFLAGS=-c -Wall
-LDFLAGS=
-SOURCES=algoritmos.cpp
-OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=algoritmos.exe
+CXX = g++
+CXXFLAGS = -c -Wall
+LDFLAGS =
+SOURCES = algoritmos.cpp
+OBJECTS = $(SOURCES:.cpp=.o)
+EXECUTABLE = algoritmos
 
 all: $(SOURCES) $(EXECUTABLE)
+	./$(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+	$(CXX) $(LDFLAGS) $(OBJECTS) -o $@
 
 .cpp.o:
-	$(CC) $(CFLAGS) $< -o $@
+	$(CXX) $(CXXFLAGS) $< -o $@
 
 clean:
 	rm -f $(OBJECTS) $(EXECUTABLE)

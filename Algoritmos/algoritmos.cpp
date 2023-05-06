@@ -124,10 +124,56 @@ void quickSort(int arr[], int start, int end)
 	quickSort(arr, p + 1, end);
 }
 
-int main()
-{
-    // código del programa principal
-    // ...
+int main(){
+
+    int arr[] = {64, 34, 25, 12, 22, 11, 90};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    // Aplicando Bubble Sort
+    bubbleSort(arr, n);
+
+    // Imprimiendo el arreglo ordenado
+    cout << "Arreglo ordenado con Bubble Sort: ";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    cout << endl;
+
+    int arr2[] = {64, 34, 25, 12, 22, 11, 90};
+    n = sizeof(arr2) / sizeof(arr2[0]);
+
+    // Aplicando Selection Sort
+    selectionSort(arr2, n);
+
+    // Imprimiendo el arreglo ordenado
+    cout << "Arreglo ordenado con Selection Sort: ";
+    for (int i = 0; i < n; i++)
+        cout << arr2[i] << " ";
+    cout << endl;
+
+    int arr3[] = {64, 34, 25, 12, 22, 11, 90};
+    n = sizeof(arr3) / sizeof(arr3[0]);
+
+    // Aplicando Insertion Sort
+    insertionSort(arr3, n);
+
+    // Imprimiendo el arreglo ordenado
+    cout << "Arreglo ordenado con Insertion Sort: ";
+    for (int i = 0; i < n; i++)
+        cout << arr3[i] << " ";
+    cout << endl;
+
+    int arr4[] = {64, 34, 25, 12, 22, 11, 90};
+    n = sizeof(arr4) / sizeof(arr4[0]);
+
+    // Aplicando Quick Sort
+    quickSort(arr4, 0, n - 1);
+
+    // Imprimiendo el arreglo ordenado
+    cout << "Arreglo ordenado con Quick Sort: ";
+    for (int i = 0; i < n; i++)
+        cout << arr4[i] << " ";
+    cout << endl;
+
 
     return 0;
 }
