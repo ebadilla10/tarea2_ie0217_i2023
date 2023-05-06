@@ -23,15 +23,43 @@ OTRO MODO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U
 OTROS ACUERDOS EN EL SOFTWARE.
 */
 
-#ifndef HEADER_SORT_HPP
-#def HEADER_SORT_HPP
+    #ifndef HEADER_SORT_HPP
+    #def HEADER_SORT_HPP
 
-void bubbleSort(int arr[], int n);
+    /**
+    * La función se encarga de ordenar un array de enteros mediante el algoritmo Bubble Sort.
+    *
+    * @param arr   Array que debe ordenarse.
+    * @param n     Longitud del array.
+    */
+    void bubbleSort(int arr[], int n);
 
-void selectionSort(int arr[], int n);
 
-void insertionSort(int arr[], int n);
+    /**
+    * La función se encarga de ordenar un array de enteros mediante el algoritmo Selection Sort.
+    *
+    * @param arr   Array que debe ordenarse.
+    * @param n     Longitud del array.
+    */
+    void selectionSort(int arr[], int n);
 
-void quickSort(int arr[], int low, int high);
 
-#endif /* HEADER_SORT_HPP */
+    /**
+    * La función se encarga de ordenar un array de enteros mediante el algoritmo Insertion Sort.
+    *
+    * @param arr   Array que debe ordenarse.
+    * @param n     Longitud del array.
+    */
+    void insertionSort(int arr[], int n);
+
+
+    /**
+    * La función se encarga de ordenar un array de enteros mediante el algoritmo Quick Sort.
+    *
+    * @param arr    Array que debe ordenarse.
+    * @param low    Indice del último elemento dentro del subarreglo
+    * @param high   Indice del último elemento dentro del subarreglo
+    */
+    void quickSort(int arr[], int low, int high);
+
+    #endif /* HEADER_SORT_HPP */
