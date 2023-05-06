@@ -98,7 +98,7 @@ int main() {
       std::cout << "Popped value: " << value << std::endl;
     }
 
-    // Aqui se muestra el tamaño final de la pila que debería ser cero luego de la sección pasada 
+    // Aqui se muestra el tamaño final de la pila que debería ser cero luego de la sección pasada
     std::cout << "Stack size: " << s.size() << std::endl;
   } catch (const std::exception& e) {
     std::cerr << "Exception: " << e.what() << std::endl;
@@ -133,6 +133,14 @@ int main() {
   } catch (const std::exception& e) {
     std::cerr << "Exception: " << e.what() << std::endl;
   }
+
+    // En este punto se desarrollo el Punto 5 para lanzar la excepción out_of_range
+
+    // Se define un vector de 5 elementos
+    std::vector<int> v{7, 9, 11, 13, 55};
+
+    // Se llama la posicion 7 del vector que no existe por lo que deberia imprimir la excepción out_of_range
+    std::cout << "El elemento en la posicion 4 es: " << v.at(7) << std::endl;
 
 
   return 0;
