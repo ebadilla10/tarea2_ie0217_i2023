@@ -97,6 +97,8 @@ int main() {
       int value = s.pop();
       std::cout << "Popped value: " << value << std::endl;
     }
+
+    // Aqui se muestra el tamaño final de la pila que debería ser cero luego de la sección pasada 
     std::cout << "Stack size: " << s.size() << std::endl;
   } catch (const std::exception& e) {
     std::cerr << "Exception: " << e.what() << std::endl;
