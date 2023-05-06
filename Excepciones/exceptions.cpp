@@ -23,15 +23,32 @@ OTRO MODO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U
 OTROS ACUERDOS EN EL SOFTWARE.
 */
 
+/**
+ * @file stackTemplate.cpp
+ * @brief Ejemplo de uso se excepciones
+ * @date 30/04/2023
+ * @author ebadilla
+*/
 #include <iostream>
 
+/**
+ * @brief Clase MyException que hereda de std::exception
+ */
 class MyException : public std::exception {
 public:
+  /**
+   * @brief Devuelve el mensaje de error de la excepción
+   * @return const char* Mensaje de error
+   */
   const char* what() const throw() {
     return "My custom exception";
   }
 };
 
+/**
+ * @brief Función principal del programa
+ * @return int Valor de retorno de la función (0 si todo va bien)
+ */
 int main() {
 
   try {
@@ -42,3 +59,4 @@ int main() {
 
   return 0;
 }
+
