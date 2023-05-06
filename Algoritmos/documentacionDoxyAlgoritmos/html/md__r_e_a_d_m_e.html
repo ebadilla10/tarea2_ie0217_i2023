@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Algoritmos: Algoritmos de ordenamiento</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Algoritmos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">Algoritmos de ordenamiento </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>Se presenta un problema en el cual se nos entrega un archivo <a class="el" href="header_sort_8hpp.html">headerSort.hpp</a> el cual contiene prototipos de funciones de ordenamiento por lo que se desarrollo en un archivo <a class="el" href="algoritmos_8cpp.html">algoritmos.cpp</a> y se realizo la respectiva investigacion de los algoritmos</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Selection Sort</h1>
+<p>El algoritmo de clasificación por selección encuentra el elemento más pequeño en la lista desordenada y lo coloca en la primera posición. Luego encuentra el segundo elemento más pequeño en la lista desordenada y lo coloca en segundo lugar, y así sucesivamente hasta que se ordena la lista. La complejidad del orden de selección en el peor de los casos es O (n ^ 2) porque tiene que buscar el valor mínimo en cada iteración, lo que requiere aproximadamente n operaciones, y este proceso debe realizarse n veces para ordenar la lista completa. Por lo tanto, para una lista con n elementos, el algoritmo tardará aprox. n^2 operaciones.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+InsertionSort</h1>
+<p>El algoritmo de ordenación por inserción recorre la lista elemento por elemento y en cada iteración inserta el elemento actual en la posición correcta en la lista preordenada. Para insertar un elemento, compara cada elemento en la lista previamente ordenada y mueve todos los elementos mayores que el elemento actual a la derecha. Cuando se encuentra la posición correcta, el elemento actual se coloca en esa posición. La complejidad del ordenamiento por inserción es O(n^2) en el peor de los casos, ya que tiene que atravesar la lista completa en cada iteración y, en el peor de los casos, tiene que mover todos los elementos un lugar hacia adelante en cada iteración. Por lo tanto, para una lista de n elementos, el algoritmo realizará aproximadamente n^2 operaciones.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Ordenamiento de burbuja</h1>
+<p>El algoritmo de clasificación de burbujas recorre la lista de elementos varias veces, comparando pares de elementos adyacentes e intercambiándolos si están en el orden incorrecto. En cada iteración, el algoritmo "sopla" el elemento más grande al final de la lista desordenada. La complejidad de la ordenación de burbujas es O(n^2) en el peor de los casos porque cada par de elementos debe compararse e intercambiarse si es necesario. Por lo tanto, para una lista de n elementos, el algoritmo realizará aproximadamente n^2 operaciones.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+QuickSort</h1>
+<p>Quicksort es un algoritmo de clasificación recursivo, divide y vencerás. La idea básica es seleccionar un elemento de una lista llamada pivote y dividir la lista en dos sublistas, una con un elemento menor que el pivote y otra con un elemento mayor que el pivote. Luego una orden de orden recursiva. En el peor de los casos, la complejidad de la clasificación rápida es o (n^2). Cuando la bisagra elegida es un elemento mínimo o máximo en cada lista de iteraciones, en la mayoría de los casos n log n). Quicksort tiene una complejidad promedio de O (n log n), lo que lo convierte en uno de los algoritmos de clasificación más rápidos y eficientes en la práctica.</p>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Cómo ejecutar el programa</h1>
+<p>Para ejecutar el programa, se deben seguir los siguientes pasos:</p>
+<ol type="1">
+<li>Clonar el repositorio de GitHub.</li>
+<li>Navegar a la carpeta donde se encuentra el archivo principal del programa.</li>
+<li>Compilar y ejecutar el programa con el siguiente comando: <code>mingw32-make</code>. </li>
+</ol>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

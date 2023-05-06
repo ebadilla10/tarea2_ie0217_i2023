@@ -23,22 +23,39 @@ OTRO MODO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U
 OTROS ACUERDOS EN EL SOFTWARE.
 */
 
-#include <iostream>
+#include "exceptions.hpp"
 
-class MyException : public std::exception {
-public:
-  const char* what() const throw() {
-    return "My custom exception";
+  /**
+   * @brief Devuelve un mensaje de error personalizado.
+   * 
+   * @return const char* 
+  */ 
+
+const char* MyException::what() const throw() {
+  return "My custom exception";
+}
+
+  /**
+   * @brief Devuelve un mensaje de logic error.
+   * 
+   * @return float a / b 
+  */ 
+float dividir(float a, float b) {
+  if (b == 0) {
+    throw std::logic_error("No se puede dividir por cero");
   }
-};
+  return a / b;
+}
 
-int main() {
-
+ /**
+   * @brief Devuelve un mensaje de invalid argument.
+   * 
+   * @return int
+  */ 
+int convertir_entero(std::string str) {
   try {
-    throw MyException();
-  } catch (std::exception& e) {
-    std::cout << "Error: " << e.what() << std::endl;
+    return std::stoi(str);
+  } catch (std::invalid_argument& e) {
+    throw std::invalid_argument("El argumento no es un número válido");
   }
-
-  return 0;
 }
