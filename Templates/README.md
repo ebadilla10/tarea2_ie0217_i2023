@@ -1,12 +1,12 @@
 # Compilacion del programa
 
-## Para ejecutar el programa escriba en la terminal las instrucciones:
+### Para ejecutar el programa escriba en la terminal las instrucciones:
 
-## Para ejecutar el codigo del punto 1., 2. y 3. del enunciado de Templates
-### make Original
+#### Para ejecutar el codigo del punto 1., 2. y 3. del enunciado de Templates
+##### make Original
 
-## Para ejecutar el codigo del punto 4. y 5. del enunciado de Templates
-### make ejemploFinal
+#### Para ejecutar el codigo del punto 4. y 5. del enunciado de Templates
+##### make ejemploFinal
 
 # Templates
 

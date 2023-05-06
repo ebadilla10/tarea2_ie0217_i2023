@@ -1,8 +1,8 @@
 # Compilacion del programa
 
-## Para ejecutar el programa escriba en la terminal las instrucciones:
+### Para ejecutar el programa escriba en la terminal las instrucciones:
 
-## make algoritmos
+##### make algoritmos
 
 
 # Análisis de cada algoritmo mediante la notación Big O.
