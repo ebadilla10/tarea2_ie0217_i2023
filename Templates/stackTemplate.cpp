@@ -23,60 +23,75 @@ OTRO MODO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U
 OTROS ACUERDOS EN EL SOFTWARE.
 */
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <stdexcept>
-#include <functional>
+#include <iostream> // Libreria para la Entrada y Salida de datos
+#include <vector> // Librería para que puedan utilizarse vectores
+#include <algorithm> // Libreria para que pueda utilizarse el algoritmo for_each
+#include <stdexcept> // Libreria para poder utilizar excepciones
+#include <functional> // Libreria para poder utilizar std::function
 
+// Se define la clase Stack y se declara la plantilla de clase llamada 'T'
 template<typename T>
 class Stack {
 private:
-  std::vector<T> data_;
+  // Este vector se encarga de guardar los elementos de la pila  
+  std::vector<T> data_; 
 
 public:
+  // Este método se encarga de insertar valores en la pila
   void push(T value) {
     data_.push_back(value);
   }
 
+  // Por otro lado, este método es el encargado de extraer el primer valor en la pila 
   T pop() {
     if (data_.empty()) {
+      // Este código se encarga de lanzar un mensaje con la excepción std::out_of_range si la pila se encuentra vacía
       throw std::out_of_range("Stack is empty");
     }
-    T value = data_.back();
-    data_.pop_back();
-    return value;
+    T value = data_.back();   // Se encarga de guardar el valor del ultimo elemento
+    data_.pop_back(); // El ultimo elemento es eliminado
+    return value; // Retorna el valor del último elemento 
   }
 
+  // Esta función limpia la pila 
   void clear() {
     data_.clear();
   }
 
+  // Esta función verifica si la pila se encuentra vacía 
   bool empty() const {
     return data_.empty();
   }
 
+  // Con esta función se obtiene el tamaño de la pila 
   std::size_t size() const {
     return data_.size();
   }
 
+  // Esta función aplica las funciones a cada uno de los elementos de la pila 
   void foreach(const std::function<void(T&)>& func) {
     std::for_each(data_.begin(), data_.end(), func);
   }
 };
 
 int main() {
+  // Se crea una instancia de la clase Stack<int>
   Stack<int> s;
+
+  // Se envían valores enteros a la pila
   s.push(2021);
   s.push(2054);
   s.push(6524);
 
+  // Imprime en pantalla el tamaño de la pila 
   std::cout << "Stack size: " << s.size() << std::endl;
 
+  // Imprime un valor 
   s.foreach([](int& value) {
     std::cout << "Value: " << value << std::endl;
   });
 
+  // Esta sección elimina los elementos de la pila hasta vaciarlo y lo muestra en la consola
   try {
     while (!s.empty()) {
       int value = s.pop();
