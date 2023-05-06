@@ -24,7 +24,7 @@ OTROS ACUERDOS EN EL SOFTWARE.
 */
 
     #ifndef HEADER_SORT_HPP
-    #def HEADER_SORT_HPP
+    #define HEADER_SORT_HPP
 
     /**
     * La función se encarga de ordenar un array de enteros mediante el algoritmo Bubble Sort.
