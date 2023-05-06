@@ -1,3 +1,7 @@
+/**
+@file main.cpp
+**/
+
 #include <iostream>
 #include "exceptions_2.h"
 

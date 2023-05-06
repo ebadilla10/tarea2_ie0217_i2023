@@ -1,3 +1,8 @@
+/**
+@file main.cpp
+@brief Función main donde se envían los valores para ordenar con los algoritmos
+**/
+
 #include <iostream>
 #include "headerSort.hpp"
 

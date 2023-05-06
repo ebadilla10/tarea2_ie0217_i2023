@@ -23,6 +23,10 @@ OTRO MODO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U
 OTROS ACUERDOS EN EL SOFTWARE.
 */
 
+/**
+@file exceptions.cpp
+**/
+
 #include <iostream>
 
 // Este código implementa la creación de la clase MyException. La clase MyException hereda los métodos y miembros de la clase 'std::exception'. 

@@ -1,3 +1,10 @@
+# Compilacion del programa
+
+## Para ejecutar el programa escriba en la terminal las instrucciones:
+
+## make algoritmos
+
+
 # Análisis de cada algoritmo mediante la notación Big O.
 
 #### La Notación Big-O es una forma de medir el tiempo lo bien que escala un programa o un algoritmo y el tiempo que tardará en ejecutar.

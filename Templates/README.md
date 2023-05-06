@@ -1,3 +1,13 @@
+# Compilacion del programa
+
+## Para ejecutar el programa escriba en la terminal las instrucciones:
+
+## Para ejecutar el codigo del punto 1., 2. y 3. del enunciado de Templates
+### make Original
+
+## Para ejecutar el codigo del punto 4. y 5. del enunciado de Templates
+### make ejemploFinal
+
 # Templates
 
 #### 1. Verificar si todos los includes agregados son necesarios para la compilación del código dado. Esto es necesario realizarlo porque en ocasiones se incluyen headers totalmente innecesarios, y si el compilador no posee instrucciones de ignorar los archivos no utilizados, se agregará código extra innecesario.

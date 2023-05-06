@@ -23,6 +23,10 @@ OTRO MODO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U
 OTROS ACUERDOS EN EL SOFTWARE.
 */
 
+/**
+@file stackTemplate.cpp
+**/
+
 #include <iostream> // Libreria para la Entrada y Salida de datos
 #include <vector> // Librería para que puedan utilizarse vectores
 #include <algorithm> // Libreria para que pueda utilizarse el algoritmo for_each

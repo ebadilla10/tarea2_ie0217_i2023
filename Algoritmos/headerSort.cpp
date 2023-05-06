@@ -1,3 +1,8 @@
+/**
+@file headerSort.cpp
+@brief Implementación de los algoritmos de ordenamiento
+**/
+
 #include "headerSort.hpp"
 
 

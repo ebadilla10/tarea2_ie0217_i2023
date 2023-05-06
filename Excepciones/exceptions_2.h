@@ -1,3 +1,7 @@
+/**
+@file exceptions_2.h
+**/
+
 #ifndef EXCEPTIONS_2_H
 #define EXCEPTIONS_2_H
 

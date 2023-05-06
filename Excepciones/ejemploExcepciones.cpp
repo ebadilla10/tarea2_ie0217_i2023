@@ -1,3 +1,9 @@
+/**
+@file ejemploExcepciones.cpp
+@brief Implementación de ejemplos para probar las librerías de excepciones 
+**/
+
+
 #include <iostream>
 #include <string>
 
