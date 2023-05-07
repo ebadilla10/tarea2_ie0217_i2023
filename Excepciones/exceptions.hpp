@@ -1,5 +1,11 @@
 // Tarea 2 Elias Alvarado Vargas B80372
 
+/**
+
+@file exceptions
+@brief Contiene el encabezado de exceptions_main.cpp
+**/
+
 //Encabezado para archivo exceptions_main.cpp
 
 // Directiva para definir el archivo

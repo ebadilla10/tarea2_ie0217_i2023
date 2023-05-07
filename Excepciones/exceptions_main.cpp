@@ -1,6 +1,12 @@
 // Tarea 2 Elias Alvarado Vargas B80372
 // Archivo fuente a partir de exceptions.cpp
 
+/**
+
+@file exception_main.cpp
+@brief Implementacion de excepciones
+**/
+
 // Se agrega libreria iostream y el archivo de encabezado
 // exceptions.hpp 
 #include <iostream>

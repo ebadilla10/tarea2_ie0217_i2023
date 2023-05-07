@@ -1,5 +1,12 @@
 // Tarea 2 Elias Alvarado Vargas
 
+
+/**
+
+@file tipos_excepciones.cpp
+@brief Implementacion de las tres excepciones investigadas
+**/
+
 // Codigo contiene 3 tipos de excepciones incluidas de la libreia estandar
 // de c++, donde sobresale la excepcion logica, excepcion de longitud y excepcion
 // de dominio

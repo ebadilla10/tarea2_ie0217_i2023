@@ -23,6 +23,13 @@ OTRO MODO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U
 OTROS ACUERDOS EN EL SOFTWARE.
 */
 
+
+/**
+
+@file stackTemplate.cpp
+@brief Contiene la parte sobre templates
+**/
+
 // Para saber si son necesarios los includes o no
 #include <iostream>   // Se utiliza para la entrada y salida estandar, si es necesario
 #include <vector>     // Para poder utilizar vectores, por lo tanto si es necesario

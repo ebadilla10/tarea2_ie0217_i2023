@@ -1,5 +1,11 @@
 // Tarea 2 Elias Alvarado Vargas B80372
 
+/**
+
+@file main_algoritmo.cpp
+@brief Implementacion de Algoritmos de Ordenamiento
+**/
+
 // En este archivo se tiene la implementacion de cada 
 // algoritmo de ordenamiento que se presenta en el codigo
 // de encabezado headerSort.hpp
