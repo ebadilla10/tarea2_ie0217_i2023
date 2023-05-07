@@ -26,12 +26,72 @@ OTROS ACUERDOS EN EL SOFTWARE.
 #ifndef HEADER_SORT_HPP
 #def HEADER_SORT_HPP
 
+
+/*!
+ * @brief Función de ordenamiento Bubble Sort.
+ *
+ * Esta función recibe un arreglo y lo devuelve ordenado al comparar elemento
+ * por elemento de izquierda a derecha y pone a la derecha el elemento mayor.
+ *
+ * @param[in] arr[] Arreglo a ordenar.
+ * @param[in] n Cantidad de elementos en arr[].
+ */
 void bubbleSort(int arr[], int n);
 
+
+/*!
+ * @brief Función de ordenamiento Selection Sort. 
+ *
+ * Esta función recibe un arreglo y lo devuelve ordenado. Busca el elemento más
+ * pequeño en el arreglo y lo va poniendo a la izquierda.
+ *
+ * @param[in] arr[] Arreglo a ordenar.
+ * @param[in] n Cantidad de elementos en arr[].
+ */
 void selectionSort(int arr[], int n);
 
+
+/*!
+ * @brief Función de ordenamiento Insertion Sort 
+ *
+ * Esta función recibe un arreglo y lo devuelve ordenado. Toma cada elemento de
+ * la matriz y lo inserta en su posición correcta en la parte ya ordenada de la
+ * matriz.
+ *
+ * @param[in] arr[] Arreglo a ordenar.
+ * @param[in] n Cantidad de elementos en arr[].
+ */
 void insertionSort(int arr[], int n);
 
-void quickSort(int arr[], int low, int high);
+
+/*!
+ * @brief Función de ordenamiento Quick Sort.
+ *
+ * Esta función recibe un arreglo y lo devuelve ordenado. Utiliza la técnica de
+ * divide y vencerás para ordenar un arreglo de elementos. La idea básica 
+ * detrás del algoritmo es elegir un elemento pivote del arreglo y particionar
+ * el arreglo alrededor de ese elemento. Todos los elementos menores que el 
+ * pivote se colocan a la izquierda del pivote, y todos los elementos mayores
+ * se colocan a la derecha. Luego, el proceso se repite recursivamente para los
+ * sub-arreglos antes y después del pivote hasta que todo el arreglo esté 
+ * ordenado.
+ *
+ * @param[in] arr[] Arreglo a ordenar.
+ * @param[in] start 
+ * @param[in] end
+ */
+void quickSort(int arr[], int start, int end);
+
+
+/*!
+ * @brief Función de partición para Quick Sort.
+ * 
+ * 
+ * @param[in] arr[] Arreglo a ordenar.
+ * @param[in] start 
+ * @param[in] end
+ */
+int partition(int arr[], int start, int end);
+
 
 #endif /* HEADER_SORT_HPP */
