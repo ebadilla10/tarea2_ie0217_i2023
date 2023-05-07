@@ -27,7 +27,7 @@ OTROS ACUERDOS EN EL SOFTWARE.
 #def HEADER_SORT_HPP
 
 
-/**
+/*!
  * @brief Función de ordenamiento Bubble Sort.
  *
  * Esta función recibe un arreglo y lo devuelve ordenado al comparar elemento
@@ -39,7 +39,7 @@ OTROS ACUERDOS EN EL SOFTWARE.
 void bubbleSort(int arr[], int n);
 
 
-/**
+/*!
  * @brief Función de ordenamiento Selection Sort. 
  *
  * Esta función recibe un arreglo y lo devuelve ordenado. Busca el elemento más
@@ -51,10 +51,10 @@ void bubbleSort(int arr[], int n);
 void selectionSort(int arr[], int n);
 
 
-/**
+/*!
  * @brief Función de ordenamiento Insertion Sort 
  *
- * Esta función recibe un arreglo y lo devuelve ordenado. toma cada elemento de
+ * Esta función recibe un arreglo y lo devuelve ordenado. Toma cada elemento de
  * la matriz y lo inserta en su posición correcta en la parte ya ordenada de la
  * matriz.
  *
@@ -64,7 +64,7 @@ void selectionSort(int arr[], int n);
 void insertionSort(int arr[], int n);
 
 
-/**
+/*!
  * @brief Función de ordenamiento Quick Sort.
  *
  * Esta función recibe un arreglo y lo devuelve ordenado. Utiliza la técnica de
@@ -83,11 +83,10 @@ void insertionSort(int arr[], int n);
 void quickSort(int arr[], int start, int end);
 
 
-/**
+/*!
  * @brief Función de partición para Quick Sort.
  * 
  * 
- *
  * @param[in] arr[] Arreglo a ordenar.
  * @param[in] start 
  * @param[in] end
