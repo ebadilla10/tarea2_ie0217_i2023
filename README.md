@@ -1,15 +1,12 @@
 # IE0217 - Tarea 2 - Sergio Garino Vargas - B73157
 
 - [Tarea 2 - Proyectos heredados](#tarea 2)
-  - [Objetivo](#objetivo)
   - [Entregable](#entregable)
   - [Reporte](#reporte)
 
-## Objetivo
-1. Hola
 
 ## Entregable
-1. Hola
+1. La tarea fue completada hasta el punto 3 de la sección _Template_.
 
 ## Reporte
 ### Analisis de la complejidad de los algoritmos
