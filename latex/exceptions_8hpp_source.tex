@@ -1,0 +1,32 @@
+\hypertarget{exceptions_8hpp_source}{}\doxysection{exceptions.\+hpp}
+\label{exceptions_8hpp_source}\index{Excepciones/exceptions.hpp@{Excepciones/exceptions.hpp}}
+\mbox{\hyperlink{exceptions_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Tarea\ 2\ Elias\ Alvarado\ Vargas\ B80372}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//Encabezado\ para\ archivo\ exceptions\_main.cpp}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ Directiva\ para\ definir\ el\ archivo}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ MY\_EXCEPTION\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ MY\_EXCEPTION\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ Se\ agrega\ biblioteca\ exception\ que\ proporciona\ la}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ clase\ base\ para\ las\ excepciones\ en\ C++}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <exception>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ Tal\ como\ se\ documento\ en\ exceptions.cpp,\ aqui\ se\ }}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ tiene\ la\ clase\ MyException\ donde\ herede\ una\ excepcion}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ luego\ los\ miembros\ de\ la\ clase\ son\ publicos,\ debajo\ de\ public}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_my_exception}{MyException}}\ :\ \textcolor{keyword}{public}\ std::exception\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ Se\ define\ un\ metodo\ what()\ que\ devuelve\ un\ my\ custom\ exception}}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_my_exception_a2b3349cb98dbce0294df0e28f344877c}{what}}()\ \textcolor{keyword}{const}\ throw()\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}My\ custom\ exception"{}};}
+\DoxyCodeLine{00029\ \ \ \}}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif\ \ }}
+
+\end{DoxyCode}
