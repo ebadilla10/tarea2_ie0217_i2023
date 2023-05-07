@@ -19,3 +19,5 @@ y así sucesivamente hasta que la lista esté completamente ordenada. SelectionS
 lo que lo hace ineficiente para listas grandes.
 
 todos tienen complejidad O(n^2)
+
+Para correr los codigos solo poner make en la terminal estando en la carpeta donde estan los archivos
