@@ -24,14 +24,55 @@ OTROS ACUERDOS EN EL SOFTWARE.
 */
 
 #ifndef HEADER_SORT_HPP
-#def HEADER_SORT_HPP
+#define HEADER_SORT_HPP
 
+/*!
+* @brief Recorre todo el arreglo varias veces, hasta que no encuentra cambios.
+*
+* Este método se encarga de recorrer la matriz una y otra vez, comparando el valor 
+* con los adyacentes, luego los intercambia hasta que no realiza cambios.
+*
+* @param arr arreglo a ordenar 'array'
+* @param n un número 'entero' el cual es el tamaño del array
+*/
 void bubbleSort(int arr[], int n);
 
+/*!
+* @brief Recorre todo el arreglo buscando el más pequeño para moverlo al inicio.
+*
+* En este método se recorre la matriz para buscar el valor más pequeño,
+* este es enviado al incio y se vuelve a recorrer para buscar el siguiente más pequeño.
+* Se repite hasta que no realiza cambios.
+*
+* @param arr arreglo a ordenar 'array'
+* @param n un número 'entero'
+*/
 void selectionSort(int arr[], int n);
 
+/*!
+* @brief Recorre todo el arreglo acomodando valores en su posición correcta.
+*
+* En este método se recorre la matriz para buscar la posición del valor,
+* este es enviado a su posición correcta y se vuelve a recorrer para comprobar 
+* el siguiente valor.
+* Repite hasta que hayan errores en el orden.
+*
+* @param arr arreglo a ordenar 'array'
+* @param n un número 'entero'
+*/
 void insertionSort(int arr[], int n);
 
+/*!
+* @brief Toma un pivote del cual se basa la manera de acomodar.
+*
+* Con este método toma un pivote. Este sirve para acomodar los valores tanto a la izquierda,
+* como a la derecha, para acomodar cada valor según su posición con este.
+* Repite recursivamente hasta que quede ordenado.
+*
+* @param arr arreglo a ordenar 'array'
+* @param low un número 'entero' el cual es el primer valor del subarreglo
+* @param high un número 'entero' el cual corresponde al último valor del subarreglo
+*/
 void quickSort(int arr[], int low, int high);
 
 #endif /* HEADER_SORT_HPP */

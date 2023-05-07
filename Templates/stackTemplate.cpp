@@ -26,66 +26,94 @@ OTROS ACUERDOS EN EL SOFTWARE.
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <stdexcept>
+// #include <stdexcept> //no es necesario para la compilación del programa
 #include <functional>
 
+// define el template para la clase Stack
 template<typename T>
 class Stack {
 private:
+// Miembros de clases privadas, únicamente accesibles por el método de clase
   std::vector<T> data_;
 
+// Accesibles por todos
 public:
+// Introduce un nuevo valor a la pila
   void push(T value) {
     data_.push_back(value);
   }
-
+// Saca el último valor de la pila y lo devuelve
   T pop() {
     if (data_.empty()) {
+      // Si está vacía tira error
       throw std::out_of_range("Stack is empty");
     }
     T value = data_.back();
     data_.pop_back();
     return value;
   }
-
+// Limpia la pila
   void clear() {
     data_.clear();
   }
-
+// Verifica si la pila está vacía
   bool empty() const {
     return data_.empty();
   }
-
+// Retorna el tamaño de la pila
   std::size_t size() const {
     return data_.size();
   }
-
+// Ejecuta una función por cada elemento de la pila
   void foreach(const std::function<void(T&)>& func) {
     std::for_each(data_.begin(), data_.end(), func);
   }
 };
 
+// Crea un stack de enteros, con nombre s
 int main() {
   Stack<int> s;
+  // Introduce 3 valores en la pila
   s.push(2021);
   s.push(2054);
   s.push(6524);
-
+// Imprime el tamaño de la pila
   std::cout << "Stack size: " << s.size() << std::endl;
-
+// Por cada elemento de la pila imprime su valor
   s.foreach([](int& value) {
     std::cout << "Value: " << value << std::endl;
   });
 
   try {
+    // Mientras la pila no esté vacía, toma elementos de la pila y los imprime en consola
     while (!s.empty()) {
       int value = s.pop();
       std::cout << "Popped value: " << value << std::endl;
     }
     std::cout << "Stack size: " << s.size() << std::endl;
+    // Una vez vacía, se imprime el tamaño, que sería 0.
   } catch (const std::exception& e) {
+    // Cuando la pila está vacía, ocurre un error que es "atrapado" por este catch y se imprime en consola
+    // la excepción
     std::cerr << "Exception: " << e.what() << std::endl;
   }
-
+  Stack<char> s2;
+  // Introduce 3 valores en la pila
+  s2.push('a');
+  s2.push('b');
+  s2.push('c');
+// Imprime el tamaño de la pila
+// Imprimse el tamaño de la segunda pila
+  std::cout << "Stack size: " << s2.size() << std::endl;
+  // Imprime cada valor de la segunda pila
+  s2.foreach([](char& value) {
+    std::cout << "Value: " << value << std::endl;
+  });
+  // Si sacamos 3 valores funciona perfecto, pero si se saca el último, que está comentado
+  // tira el error out_of_range
+  s2.pop();
+  s2.pop();
+  s2.pop();
+  // s2.pop();
   return 0;
 }
