@@ -24,21 +24,26 @@ OTROS ACUERDOS EN EL SOFTWARE.
 */
 
 #include <iostream>
+#include "headers.hpp"
 
-class MyException : public std::exception {
-public:
-  const char* what() const throw() {
-    return "My custom exception";
-  }
-};
-
+// Se inicializa el main
 int main() {
-
+// con try throw y catch se captura la excepción e imprime el error mencionado
+// arriba
   try {
     throw MyException();
   } catch (std::exception& e) {
     std::cout << "Error: " << e.what() << std::endl;
   }
+// cierra programa
+
+// Errores solicitados en el último punto. Son 3 errores.
+/*!  main(123);
+  int arr[2] = {1, 2, 3, 4, 5};
+  int value = arr[10];
+  std::cout << value;
+  const char* what() const noexcept;
+*/
 
   return 0;
 }
