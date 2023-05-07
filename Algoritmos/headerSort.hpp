@@ -24,7 +24,7 @@ OTROS ACUERDOS EN EL SOFTWARE.
 */
 
 #ifndef HEADER_SORT_HPP
-#def HEADER_SORT_HPP
+#define HEADER_SORT_HPP
 
 void bubbleSort(int arr[], int n);
 
@@ -33,5 +33,9 @@ void selectionSort(int arr[], int n);
 void insertionSort(int arr[], int n);
 
 void quickSort(int arr[], int low, int high);
+void swap(int *a, int *b);
+int partition(int arr[], int low, int high);
+
+
 
 #endif /* HEADER_SORT_HPP */
