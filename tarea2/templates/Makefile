@@ -6,7 +6,7 @@ all: $(TARGET)
 	./$(TARGET)
 
 $(TARGET): $(SRC)
-	@if [ ! -d build ]; then mkdir build;
+	@if [ ! -d build ]; then mkdir build; fi
 	$(CC) $(SRC) -o $(TARGET)
 
 clean:

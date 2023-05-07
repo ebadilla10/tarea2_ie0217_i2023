@@ -25,12 +25,15 @@ void printArray(int arr1[], int n1)
 int main() {
     //Bubble
 
+    cout << "\n" << endl ;
+
+    cout << "BubbleSort" << endl ;
+
     int arreglito[SIZE_ARRAY] = {};
     srand(time(NULL));
     int aleat = rand();
-    cout << "Aleatorio: " << aleat << endl;
 
-    for(int i = 0; i < SIZE_ARRAY; i++){ arreglito[i] = rand() % 10000; }
+    for(int i = 0; i < SIZE_ARRAY; i++){ arreglito[i] = rand() % 100; }
 
     for(int i = 0; i < SIZE_ARRAY; i++){ cout << arreglito[i] << " "; }
 
@@ -38,9 +41,12 @@ int main() {
     cout << endl;
     for(int i = 0; i < SIZE_ARRAY; i++){ cout << arreglito[i] << " "; }
 
+    cout << "\n" << endl ;
+
 ///////////////////////////////////////////////////////////////////////////////
 
     //Insertion
+    cout << "InsertionSort" << endl ;
 
     int arr[] = { 12, 86, 10, 22, 23 };
     int n = sizeof(arr) / sizeof(arr[0]);
@@ -55,11 +61,13 @@ int main() {
     cout << "Ordenado array: ";
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
-    cout << endl;
+
+    cout << "\n" << endl ;
     
 ///////////////////////////////////////////////////////////////////////////////
 
     //quick
+    cout << "QuickSort" << endl ;
 
    int arr1[] = {10, 7, 8, 9, 1, 5};
     int n1 = sizeof(arr) / sizeof(arr[0]);
@@ -71,11 +79,15 @@ int main() {
 
     cout << "Array ordenado: ";
     printArray(arr1, n1);
+
+    cout << "\n" << endl ;
     
 /////////////////////////////////////////////////////////////////////////////
 
 
-    //selection
+    //selection ;
+
+    cout << "SelectionSOrt" << endl ;
 
     int arr2[] = {64, 25, 12, 22, 11};
     int n2 = sizeof(arr2)/sizeof(arr2[0]);
@@ -90,7 +102,8 @@ int main() {
     cout << "Sorted array: ";
     for (int i = 0; i < n2; i++)
         cout << arr2[i] << " ";
-    cout << endl;
+
+    cout << "\n" << endl ;
 
     return 0;
 }
