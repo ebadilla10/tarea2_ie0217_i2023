@@ -24,21 +24,69 @@ OTROS ACUERDOS EN EL SOFTWARE.
 */
 
 #include <iostream>
+#include <vector>
+#include <stdexcept>
+#include "exceptions.hpp"
 
-class MyException : public std::exception {
-public:
-  const char* what() const throw() {
-    return "My custom exception";
-  }
-};
 
+const char* MyException::what() const throw() {
+  return "My custom exception";
+}
+
+
+/**
+ * @brief Función principal que lanza una excepción personalizada y la maneja.
+ * 
+ * @return 0 si todo sale bien.
+*/
 int main() {
 
+  /* Uso de la excepción out_of_range: se comprueba si un numero esta fuera
+  del rango valido del vector*/
+  std::vector<int> vec{1, 2, 3};
+  try {
+    int x = 5; 
+    if (x >= vec.size()) {
+      throw std::out_of_range("El indice esta fuera del rango valido del vector");
+  }
+  } catch (std::out_of_range& e) {
+    std::cout << "Error: " << e.what() << std::endl;
+  }
+
+  /* Uso de la excepción invalid_argument: se comprueba si un argumento es inválido */
+  int num;
+  try {
+    num = -1;
+    if (num <= 0) {
+      throw std::invalid_argument("El numero debe ser positivo.");
+    }
+  }
+  catch (const std::invalid_argument& e) {
+    std::cerr << "Error: " << e.what() << std::endl;
+  }
+
+  /* Uso de la excepción logic_error: se comprueba si hay errores lógicos */
+  int x = 5;
+  int y = 0;
+  try {
+    if (y == 0) {
+    throw std::logic_error("No se puede dividir por cero.");
+    }
+    int result = x / y;
+  } catch (const std::logic_error& e) {
+     std::cerr << "Error: " << e.what() << std::endl;
+  }
+
+
+  /* Se intenta lanzar una excepción  MyException dentro de un bloque try-catch. Si se lanza la excepción, 
+  se captura con una referencia a std::exception en el bloque catch y se imprime
+  el mensaje personalizado "My custom exception" utilizando la función what().*/
   try {
     throw MyException();
   } catch (std::exception& e) {
     std::cout << "Error: " << e.what() << std::endl;
   }
+  
 
   return 0;
 }
