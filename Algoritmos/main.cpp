@@ -11,6 +11,7 @@ int main() {
    int arrQuick[] = {5,7,9,1,0,6,8,2,4};
 
    // Imprimir el orden original
+   cout << "Arreglo original:" << endl;
    for (int i = 0; i < 9; i++) {
         std::cout << arrBubble[i] << " ";
     }

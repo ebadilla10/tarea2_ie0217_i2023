@@ -16,3 +16,12 @@ En el algoritmo Insertion Sort se divide el arreglo en una parte ordenada y una 
 ## Quick Sort
 
 En el caso del Quick Sort, el peor caso tiene una complejidad del O(n^2) cuando el pivote seleccionado divide el arreglo en sub arreglos de tamaño diferente; sin embargo, en el caso común, la complejidad es de O(n log(n)) lo que convierte al Quick Sort más rápido que los otros algoritmos. Cuando se divide el arreglo en sub arreglos de igual tamaño, se tiene un proceso más eficiente con la complejidad O(n log(n)). 
+
+## Ejecución del programa
+
+Para compilar y ejecutar el programa, utilice el siguiente comando desde el directorio <code>Algoritmos</code>:
+
+```
+make
+```
+

@@ -24,7 +24,7 @@ OTROS ACUERDOS EN EL SOFTWARE.
 */
 
 #ifndef HEADER_SORT_HPP
-#def HEADER_SORT_HPP
+#define HEADER_SORT_HPP
 
 /**
  * @brief Metodo de ordenamiento de numeros enteros.

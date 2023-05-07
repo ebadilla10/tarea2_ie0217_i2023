@@ -11,3 +11,11 @@ Se produce cuando el sistema opertivo no puede dar suficiente memoria para una a
 ## Excepción Invalid Argument
 
 Se genera cuando se ha pasado un argumento no válido a una función o método; puede que el valor no cumpla con un  requisito de formato o tipo.
+
+## Ejecución del programa
+
+Para compilar y ejecutar el programa, utilice el siguiente comando desde el directorio <code>Excepciones</code>:
+
+```
+make
+```

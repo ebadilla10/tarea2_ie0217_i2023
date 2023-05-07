@@ -25,6 +25,8 @@ OTROS ACUERDOS EN EL SOFTWARE.
 
 #include <iostream>
 #include <functional>
+#include <vector>
+#include <algorithm>
 
 /**
  * @brief Templated class for representing a stack.
