@@ -26,63 +26,103 @@ OTROS ACUERDOS EN EL SOFTWARE.
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <stdexcept>
 #include <functional>
 
+// Declaración de la clase Stack como una plantilla (template)
 template<typename T>
 class Stack {
 private:
-  std::vector<T> data_;
+  std::vector<T> data_;  // Vector que contiene los datos de la pila
 
 public:
+  // Método para agregar un elemento a la pila
   void push(T value) {
     data_.push_back(value);
   }
 
+  // Método para eliminar y devolver el último elemento agregado a la pila
   T pop() {
-    if (data_.empty()) {
+    if (data_.empty()) {  // Si la pila está vacía, lanzar una excepción
       throw std::out_of_range("Stack is empty");
     }
-    T value = data_.back();
-    data_.pop_back();
-    return value;
+    T value = data_.back();  // Obtener el último elemento agregado
+    data_.pop_back();  // Eliminar el último elemento agregado
+    return value;  // Devolver el último elemento agregado
   }
 
+  // Método para vaciar la pila
   void clear() {
     data_.clear();
   }
 
+  // Método para verificar si la pila está vacía
   bool empty() const {
     return data_.empty();
   }
 
+  // Método para obtener el tamaño de la pila
   std::size_t size() const {
     return data_.size();
   }
 
+  // Método para recorrer la pila y aplicar una función a cada elemento
   void foreach(const std::function<void(T&)>& func) {
     std::for_each(data_.begin(), data_.end(), func);
   }
 };
 
 int main() {
+  // Crear una pila de enteros y agregar algunos valores
   Stack<int> s;
   s.push(2021);
   s.push(2054);
   s.push(6524);
 
+  // Imprimir el tamaño de la pila
   std::cout << "Stack size: " << s.size() << std::endl;
 
+  // Recorrer la pila y imprimir cada valor
   s.foreach([](int& value) {
     std::cout << "Value: " << value << std::endl;
   });
 
   try {
+    // Eliminar todos los elementos de la pila y mostrar el valor eliminado en cada iteración
     while (!s.empty()) {
       int value = s.pop();
       std::cout << "Popped value: " << value << std::endl;
     }
+    // Imprimir el tamaño de la pila después de eliminar todos los elementos
     std::cout << "Stack size: " << s.size() << std::endl;
+  } catch (const std::exception& e) {
+    // Manejar excepciones si la pila está vacía y se intenta eliminar un elemento
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
+
+   
+  // Stack<std::string> string_stack;
+  // string_stack.push();
+  // string_stack.push();
+  // string_stack.push();
+  // string_stack.pop();
+
+  Stack<std::string> string_stack;
+  string_stack.push("Julian");
+  string_stack.push("Martha");
+  string_stack.push("Oscar");
+
+  std::cout << "tamanio del stack: " << string_stack.size() << std::endl;
+
+  string_stack.foreach([](std::string& value) {
+    std::cout << "Value: " << value << std::endl;
+  });
+
+  try {
+    while (!string_stack.empty()) {
+      std::string value = string_stack.pop();
+      std::cout << "Popped value: " << value << std::endl;
+    }
+    std::cout << "String stack size: " << string_stack.size() << std::endl;
   } catch (const std::exception& e) {
     std::cerr << "Exception: " << e.what() << std::endl;
   }
