@@ -12,15 +12,15 @@ Primer semestre del 2023
 
 ### Includes
 
-* El #include <iostream>: se utiliza en la función main() para imprimir mensajes en la consola mediante std::cout y std::endl.
+* El #include &lt;iostream&gt;: se utiliza en la función main() para imprimir mensajes en la consola mediante std::cout y std::endl.
 
-* El #include <vector>:  se utiliza en la definición de la clase Stack para implementar la pila utilizando un vector de elementos.
+* El #include &lt;vector&gt;:  se utiliza en la definición de la clase Stack para implementar la pila utilizando un vector de elementos.
 
-* El #include <algorithm>: se utiliza en la definición de la función foreach() de la clase Stack para iterar sobre los elementos del vector de la pila y aplicar una función a cada uno.
+* El #include &lt;algorithm&gt;: se utiliza en la definición de la función foreach() de la clase Stack para iterar sobre los elementos del vector de la pila y aplicar una función a cada uno.
 
-* El #include <stdexcept>: se utiliza en la definición de la función pop() de la clase Stack para lanzar una excepción si se intenta extraer un elemento de una pila vacía.
+* El #include &lt;stdexcept&gt;: se utiliza en la definición de la función pop() de la clase Stack para lanzar una excepción si se intenta extraer un elemento de una pila vacía.
 
-* El #include <functional>: se utiliza en la definición de la función foreach() de la clase Stack para especificar el tipo de argumento de la función que se aplicará a cada elemento de la pila.
+* El #include &lt;functional&gt;: se utiliza en la definición de la función foreach() de la clase Stack para especificar el tipo de argumento de la función que se aplicará a cada elemento de la pila.
 
 De esta forma, se concluye que todos los includes agregados son necesarios para la compilación del código dado.
 
